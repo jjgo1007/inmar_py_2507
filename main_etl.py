@@ -14,7 +14,7 @@ print(f'Root path:\nPath: {path}')
 
 current_year = 2021
 current_month = 5
-current_day = 28 # shouold only modify the day with 25, 27 or 28
+current_day = 27 # shouold only modify the day with 25, 27 or 28
 
 short_year = str(current_year)[2:]  
 if current_month < 10:
@@ -27,19 +27,19 @@ if current_day < 10:
 else:
     short_day = str(current_day)
 
-filepath = path + f'\input_folder\{current_year}{short_month}{short_day}/'
-processed_path = path + '\\processed\\'
-unproc_path = path + '\\unprocessed\\'
-raw_path = processed_path + 'raw\\'
+filepath = path + f'/input_folder/{current_year}{short_month}{short_day}/'
+processed_path = path + '/processed/'
+unproc_path = path + '/unprocessed/'
+raw_path = processed_path + 'raw/'
 
 # Create the raw/<today> path if it doesn't exist    
-if not os.path.exists(raw_path + f'{short_year}{short_month}{short_day}\\'):
-    os.makedirs(raw_path + f'{short_year}{short_month}{short_day}\\')
+if not os.path.exists(raw_path + f'{short_year}{short_month}{short_day}/'):
+    os.makedirs(raw_path + f'{short_year}{short_month}{short_day}/')
     # print(f'Created dir: {raw_path} + {short_year}{short_month}{short_day}\')
-    print(f'Created dir: {raw_path}{short_year}{short_month}{short_day}\\')
+    print(f'Created dir: {raw_path}{short_year}{short_month}{short_day}/')
 
 
-write_path = raw_path + f'{short_year}{short_month}{short_day}\\'
+write_path = raw_path + f'{short_year}{short_month}{short_day}/'
 
 # Sends files that pass the check to processed/raw/<day>
 # Sends files that fail the check to unprocessed
@@ -50,7 +50,7 @@ is_valid_file, data_df = validate_file(filepath, processed_path, unproc_path, wr
 data_quality_check(write_path, processed_path)
 
 if __name__ == "__main__":
-    print('Done processing files.')
-    # print(f'\nDate', current_year, short_month, short_day, f'\nCWD: {path}\nFile path: {filepath}\nProcessed path: {processed_path}\nRaw: {raw_path}')
+    print(f'\nDone processing files.\n.')
+    print(f'\nDate', current_year, short_month, short_day, f'\nCWD: {path}\nFile path: {filepath}\nProcessed path: {processed_path}\nRaw: {raw_path}')
 
     # C:\Users\user\OneDrive\Inmar_intel\pcelaython_exercise\inmar_py_2507\input_folder\20210527
