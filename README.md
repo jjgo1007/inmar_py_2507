@@ -8,7 +8,7 @@ The ETl considers the /inmar_py_2507 as the starting path for all the processes,
 Set:
     path = root_path + '\inmar_py_2507'
 
-Disclaimer: I did all the project on Windows which handles folders with '\', it might differ on Mac, hopefully it doesn't cause any trouble.
+Disclaimer: I did all the project on Windows which handles folders with ' \\ ', it might differ on Mac, hopefully it doesn't cause any trouble.
 
 All the log_files will start empty:
 - path/processed/processed_files.txt
