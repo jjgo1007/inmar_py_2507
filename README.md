@@ -2,9 +2,13 @@
 Repo to upload the Python exercise files
 
 The ETl considers the /inmar_py_2507 as the starting path for all the processes, so the path must be set as follows, depending on the location it's downloaded to: 
+
     root_path # Where this repo is located
+    
 Set:
     path = root_path + '\inmar_py_2507'
+
+Disclaimer: I did all the project on Windows which handles folders with '\', it might differ on Mac, hopefully it doesn't cause any trouble.
 
 All the log_files will start empty:
 - path/processed/processed_files.txt
@@ -30,4 +34,4 @@ The general workflow is (for each day [25, 27, 28])
 1. main_etl.py runs
 2. Creates the folder to save all the files to process that day if it doesn't exist
 3. It calls the file_check.py function; this checks the general requirements of the files, if they comply, it sends them to the processed/raw/<day> folder, if not, it sends them to the unprocessed folder and fills the unprocessed_log.txt with the reason it couldn't be processed
-4. It calls the quality_check.py functions, which contain the phone validation, formatting, and output, the null check for the mandatory columns (name, phone, location), reads each file of the day, splits them into the .out and .bad files, and fills the bas_metadata.txt file.
+4. It calls the quality_check.py functions, which contain the phone validation, formatting, and output, the null check for the mandatory columns (name, phone, location), reads each file of the day, splits them into the .out and .bad files, and fills the bad_metadata.txt file.
